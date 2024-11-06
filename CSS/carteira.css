@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    height: 100vh;
+  }
+  
+  .app-container {
+    width: 375px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .app-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffcc00;
+    padding: 10px;
+  }
+  
+  .logo {
+    width: 100px;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+  }
+  
+  .content {
+    padding: 15px;
+  }
+  
+  .payment-methods {
+    margin-top: 20px;
+  }
+  
+  .section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .section-title h2 {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .see-more {
+    font-size: 14px;
+    color: #ff9900;
+    text-decoration: none;
+  }
+  
+  .card-options {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffcc00;
+    color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .add-card p {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  .credit-card .credit-icon {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffcc00;
+    padding: 10px 0;
+  }
+  
+  .nav-icon {
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .cabecalho {
+    background-color: #4CAF50; /* Cor de fundo verde */
+    color: white; /* Cor do texto */
+    padding: 20px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+  }
+  
+  .subcabecalho {
+  text-align: center;
+  margin-top: 180px;
+  height: 100px;
+  color: #ddd;
+  font-size: xx-large;
+  font-family: 'Times New Roman', Times, serif;
+  background-color:rgb(106, 103, 103);
+  }
+  
+  
+  .div1 {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  background-color:rgb(167, 165, 165) ;
+  }
+  
+  .div2 {
+    background-color: rgb(224, 223, 223);
+    color: #4b4a4a;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    align-content: center;
+    grid-column: span 5 / span 5;
+    grid-row: span 2 / span 2;
+    grid-row-start: 2;
+  }
+  
+  .div3 {
+  background-color: #EBBE29;
+  text-align: center;
+  grid-column-start: 5;
+  grid-row-start: 3;
+  }
+  
+  /*Cabeçalho*/
+  #header {
+    background-color: #EBBE29; /* Grey background */
+    padding: 5px 5px; /* Some padding */
+    color: black;
+    text-align: center; /* Centered text */
+    font-size: 90px; /* Big font size */
+    font-weight: bold;
+    position: fixed; /* Fixed position - sit on top of the page */
+    top: 0;
+    width: 100%; /* Full width */
+  }
+  
+  /*Rodapé*/
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #EBBE29;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .footer-container {
+    display: flex; /* Usando flexbox */
+    justify-content: center; /* Centraliza as imagens */
+    gap: 400px; /* Espaço entre as imagens */
+  }
+  
+  /*Carrossel de fotos*/
+  .caro{
+    margin-top: 225px;
+  }
+  
+  .carousel {
+    position: center;
+    max-width: 400px; /* Largura máxima do carrossel */
+    margin: auto; /* Centraliza o carrossel */
+    overflow: hidden; /* Oculta imagens que saem da área do carrossel */
+  }
+  
+  .carousel-images {
+    display: flex; /* Alinha as imagens lado a lado */
+    transition: transform 0.5s ease; /* Transição suave */
+  }
+  
+  .carousel-images img {
+    max-width: 100%; /* Imagens responsivas */
+    height: auto; /* Mantém a proporção */
+  }
+  
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .prev {
+    left: 10px; /* Lado esquerdo */
+  }
+  
+  .next {
+    right: 10px; /* Lado direito */
+  }
