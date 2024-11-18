@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #F0CD5C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+    
+.sacola-container {
+    width: 90%;
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+}
+    
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+    
+.logo {
+    width: 60px;
+}
+    
+.user-icon {
+    font-size: 24px;
+}
+    
+.sacola-title {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    color: #333;
+    margin: 10px 0;
+}
+    
+.itens-adicionados h3,
+.entrega h3 {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 10px;
+    text-align: left;
+}
+    
+.item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+    
+.item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+    
+.item-info {
+    flex: 1;
+    text-align: left;
+}
+    
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+    
+.quantity-control button {
+    background-color: #ddd;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+    
+.quantity-control span {
+    font-size: 16px;
+    font-weight: bold;
+}
+    
+.entrega {
+    margin: 20px 0;
+    text-align: left;
+    font-size: 16px;
+    color: #333;
+}
+    
+.confirmar-pedido {
+    background-color: #EBBE29;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+    
+.alterar-dados {
+    background-color: transparent;
+    color: #666;
+    font-size: 14px;
+    border: none;
+    margin-top: 5px;
+    cursor: pointer;
+}

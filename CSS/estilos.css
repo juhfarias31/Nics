@@ -1,0 +1,130 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Cabeçalho*/
+#header {
+  background-color: #EBBE29; /* Grey background */
+  padding: 5px 5px; /* Some padding */
+  color: black;
+  text-align: center; /* Centered text */
+  font-size: 90px; /* Big font size */
+  font-weight: bold;
+  position: fixed; /* Fixed position - sit on top of the page */
+  top: 0;
+  width: 100%; /* Full width */
+}
+
+/*Subcabeçalho*/
+.subcabecalho {
+  text-align: center;
+  margin-top: 180px;
+  height: 100px;
+  color: #ddd;
+  font-size: xx-large;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color:dimgray;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 0px;
+}
+  
+/* #555353 */
+
+.div1 {
+  padding: 5%;
+  background-color: #555353;
+  opacity: 75%;
+  font-size:xx-large;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  border-radius: 5% 5% 5% 5%;
+  margin-left: 10%;
+  grid-column: span 2 / span 2;
+  color: white;
+}
+
+.div2 {
+  padding: 5%;
+  text-align: center;
+  grid-column: span 2 / span 2;
+  grid-column-start: 3;
+}
+
+/* Menu Dropup no Rodapé */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #EBBE29;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  height: 107px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+
+}
+
+/* Menu */
+.dropbtn{
+  background-color: #EBBE29;
+  border: none;
+}
+
+.dropup {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: x-large;
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropup content (Hidden by Default) */
+.dropup-content {
+  display: none;
+  position: absolute;
+  bottom: 50px;
+  background-color: #F0CD5C;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropup */
+.dropup-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropup links on hover */
+.dropup-content a:hover {background-color: #ddd}
+
+/* Show the dropup menu on hover */
+.dropup:hover .dropup-content {
+  display: block;
+}
+
+/* Change the background color of the dropup button when the dropup content is shown */
+.dropup:hover .dropbtn {
+  background-color: #F0CD5C;
+}
+
+
+.icones{
+  display:flex;
+  padding: 16px;
+  width: 100%;
+  justify-content: space-around;
+}

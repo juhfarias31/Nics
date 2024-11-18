@@ -1,0 +1,72 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #f5ca40cc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #EBBE29;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    margin-top: 10px;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 15px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+button {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #8D6D01;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="button"] {
+    background-color: transparent;
+    color: black;
+    border: none;
+    text-align: center;
+    padding: 0; /* Remove padding for a cleaner look */
+}
+
+button[type="button"]:hover {
+    text-decoration: underline; /* Adiciona um efeito ao passar o mouse */
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.div1{
+    text-align: center;
+}
