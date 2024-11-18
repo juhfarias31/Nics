@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider de Imagens</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+        }
+
+        .slider {
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider-content {
+            display: flex;
+            width: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slider-item {
+            flex: 0 0 100%;
+            height: auto;
+        }
+
+        .slider-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Indicadores (pontos) */
+        .indicators {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+        }
+
+        .indicator {
+            width: 10px;
+            height: 10px;
+            background-color: #bbb;
+            margin: 0 5px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .indicator.active {
+            background-color: #333;
+        }
+
+        /* Botões de navegação */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="slider">
+        <div class="slider-content">
+            <div class="slider-item">
+                <img src="./img/Foto1.png" alt="Imagem 1">
+            </div>
+            <div class="slider-item">
+                <img src="./img/Foto2.png" alt="Imagem 2">
+            </div>
+            <div class="slider-item">
+                <img src="./img/Foto3.png" alt="Imagem 3">
+            </div>
+        </div>
+
+        <!-- Indicadores (pontos) -->
+        <div class="indicators">
+            <span class="indicator" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+        </div>
+
+        <!-- Botões de navegação -->
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </section>
+
+    <script>
+        const sliderContent = document.querySelector('.slider-content');
+        const indicators = document.querySelectorAll('.indicator');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        
+        let currentIndex = 0;
+        const totalSlides = indicators.length;
+
+        // Função para atualizar o slide e os indicadores
+        function updateSlider() {
+            const offset = -currentIndex * 100;
+            sliderContent.style.transform = `translateX(${offset}%)`;
+
+            // Atualizar indicadores
+            indicators.forEach((indicator, index) => {
+                if (index === currentIndex) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+
+        // Função para ir para o slide anterior
+        function prevSlide() {
+            currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
+            updateSlider();
+        }
+
+        // Função para ir para o slide seguinte
+        function nextSlide() {
+            currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
+            updateSlider();
+        }
+
+        // Definir evento para os indicadores
+        indicators.forEach(indicator => {
+            indicator.addEventListener('click', (event) => {
+                currentIndex = parseInt(event.target.dataset.slide);
+                updateSlider();
+            });
+        });
+
+        // Eventos para os botões de navegação
+        prevButton.addEventListener('click', prevSlide);
+        nextButton.addEventListener('click', nextSlide);
+
+        // Inicializar o slider
+        updateSlider();
+    </script>
+
+</body>
+</html>

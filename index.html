@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/estilos.css">
+    <script src="./JS/JavaScript.js"></script> 
+  
+    <title>Nics Choperia</title>
+</head>
+<body>
+
+    <!--Cabeçalho-->
+    <div id="header">
+        <img src="./img/logo.png" width="300" height="150" alt="Logo" class="Logo">
+    </div> 
+
+    <!--Subcabeçalho-->
+    <div class="subcabecalho">
+      <br>
+      Seja Bem vindo!
+    </div>
+
+    <iframe src="carro.html" frameborder="0" width="100%" height="500px"></iframe>
+
+    <br>
+    <br>
+    <br>
+ 
+    <!--Texto-->
+    <div class="parent">
+      <div class="div1">
+        <br> A NICS CHOPERIA é especializada em chopes artesanais. 
+        São sempre 14 estilos de chope engatados para você escolher 
+        e se deliciar acompanhado uma das super porções do SEO PORTUGA, 
+        especialista em carnes defumadas. Também temos a opção de GROWLERS, 
+        para você levar seu chope para onde quiser!!!
+      </div>
+  
+      <div class="div2">
+        <img src="./img/Foto4.png" width="70%" height="90%" alt="Foto4">
+      </div>
+    </div>
+
+    <br>
+    
+  <!--Rodapé-->
+  <div class="footer">
+    <div class="footer-container">
+
+        <!--Menu-->
+        <div class="icones">
+        <div class="dropup">
+            <button class="dropbtn"><img src="./img/Menu.png" width="40" height="40" alt="Menu"></button>
+            <div class="dropup-content">
+                <a href="index.html">Início</a>
+                <a href="cardapio.html">Cardápio</a>
+                <a href="localizacaoecontato.html">Localização e Contato</a>
+                <a href="eventos.html">Eventos</a>
+                <a href="promocoes.html">Promoções</a>
+                <a href="sobre.html">Sobre a Nics</a>
+                <a href="feedbackeredes.html">Feedback e Redes Sociais</a>
+            </div>
+        </div>
+          <a href="sacola.html"><img src="./img/Sacola.png" width="40" height="40" alt="Sacola"></a>
+          <a href="busca.html"><img src="./img/Lupa.png" width="55" height="55" alt="Lupa"></a>
+          <a href="login.html"><img src="./img/Perfil2.png" width="55" height="55" alt="Perfil2"></a>
+        </div> 
+    </div> 
+    </div>
+</div>
+
+<script>
+  /*Carrossel de fotos*/
+const sliderContent = document.querySelector('.slider-content');
+const indicators = document.querySelectorAll('.indicator');
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
+      
+let currentIndex = 0;
+const totalSlides = indicators.length;
+
+// Função para atualizar o slide e os indicadores
+function updateSlider() {
+const offset = -currentIndex * 100;
+sliderContent.style.transform = `translateX(${offset}%)`;
+
+// Atualizar indicadores
+indicators.forEach((indicator, index) => {
+  if (index === currentIndex) {
+      indicator.classList.add('active');
+  } else {
+      indicator.classList.remove('active');
+  }
+});
+}
+
+// Função para ir para o slide anterior
+function prevSlide() {
+currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
+updateSlider();
+}
+
+// Função para ir para o slide seguinte
+function nextSlide() {
+  currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
+  updateSlider();
+}
+
+// Definir evento para os indicadores
+indicators.forEach(indicator => {
+  indicator.addEventListener('click', (event) => {
+  currentIndex = parseInt(event.target.dataset.slide);
+  updateSlider();
+ });
+});
+
+// Eventos para os botões de navegação
+prevButton.addEventListener('click', prevSlide);
+nextButton.addEventListener('click', nextSlide);
+
+// Inicializar o slider
+updateSlider();
+</script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/sacola.css">
+    <title>Nics Choperia</title>
+</head>
+
+<body>
+
+    <!--Cabeçalho-->
+    <div id="header">
+        <img src="./img/logo.png" width="300" height="150" alt="Logo" class="Logo">
+    </div> 
+
+    <!--Subcabeçalho-->
+    <div class="subcabecalho">
+      <br>
+      Sacola
+    </div>
+
+    <div class="container">
+        <div class="item">
+            <img src="./img/costela.png" alt="Costela Defumada">
+            <div class="item-info">
+                <h4>Costela defumada com lenha frutífera + Batata Frita</h4>
+            </div>
+            <div class="quantity-control">
+                <button>-</button>
+                <span>1</span>
+                <button>+</button>
+            </div>
+        </div>
+       
+        <div class="item">
+            <img src="./img/chopp1.png" alt="Chope Session IPA">
+            <div class="item-info">
+                <h4>Chope Session IPA Imperatriz 1 Litro</h4>
+            </div>
+            <div class="quantity-control">
+                <button>-</button>
+                <span>1</span>
+                <button>+</button>
+            </div>
+        </div>
+       
+        <div class="summary">
+            <div class="summary-item">
+                <span>Subtotal</span>
+                <span>R$ 58,59</span>
+            </div>
+            <div class="summary-item">
+                <span>Taxa de entrega</span>
+                <span>R$ 4,99</span>
+            </div>
+            <div class="summary-item">
+                <span>Taxa de serviço</span>
+                <span>R$ 0,99</span>
+            </div>
+            <div class="summary-item total">
+                <span>Total</span>
+                <span>R$ 64,57</span>
+            </div>
+        </div>
+
+        <!-- Seleção de Método de Pagamento -->
+        <div class="payment-method">
+            <label for="payment-method">Escolha o método de pagamento:</label>
+            <select id="payment-method" name="payment-method">
+                <option value="pix">PIX</option>
+                <option value="dinheiro">Dinheiro</option>
+                <option value="cartao">Cartão</option>
+            </select>
+        </div>
+
+        <div id="pix-payment" class="payment-option">
+            <img src="./img/pix.png" width="5%" height="5%" alt="Pix">
+            <span>Pagar por PIX</span>
+        </div>
+
+        <div id="dinheiro-payment" class="payment-option" style="display: none;">
+            <img src="./img/dinheiro.png" width="5%" height="5%" alt="Dinheiro">
+            <span>Pagar com Dinheiro</span>
+        </div>
+
+        <div id="cartao-payment" class="payment-option" style="display: none;">
+            <img src="./img/cartao.png" width="5%" height="5%" alt="Cartão">
+            <span>Pagar com Cartão</span>
+        </div>
+
+        <a href="endereco.html" class="button">Continuar</a>
+    </div>
+
+    <br><br><br><br><br><br><br>
+
+    <!--Rodapé-->
+    <div class="footer">
+        <div class="footer-container">
+
+            <!--Menu-->
+            <div class="icones">
+            <div class="dropup">
+                <button class="dropbtn"><img src="./img/Menu.png" width="40" height="40" alt="Menu"></button>
+                <div class="dropup-content">
+                    <a href="index.html">Início</a>
+                    <a href="cardapio.html">Cardápio</a>
+                    <a href="localizacaoecontato.html">Localização e Contato</a>
+                    <a href="eventos.html">Eventos</a>
+                    <a href="promocoes.html">Promoções</a>
+                    <a href="sobre.html">Sobre a Nics</a>
+                    <a href="feedbackeredes.html">Feedback e Redes Sociais</a>
+                </div>
+            </div>
+                <a href="sacola.html"><img src="./img/Sacola.png" width="40" height="40" alt="Sacola"></a>
+                <a href="busca.html"><img src="./img/Lupa.png" width="55" height="55" alt="Lupa"></a>
+                <a href="login.html"><img src="./img/Perfil2.png" width="55" height="55" alt="Perfil2"></a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Seleciona todos os botões de aumentar e diminuir a quantidade
+        const decreaseButtons = document.querySelectorAll('.quantity-control button:first-child');
+        const increaseButtons = document.querySelectorAll('.quantity-control button:last-child');
+        const quantities = document.querySelectorAll('.quantity-control span');
+    
+        // Função para atualizar a quantidade
+        function updateQuantity(index, change) {
+            let currentQuantity = parseInt(quantities[index].innerText);
+            currentQuantity += change;
+    
+            // Evita que a quantidade fique negativa
+            if (currentQuantity < 1) {
+                currentQuantity = 1;
+            }
+    
+            quantities[index].innerText = currentQuantity;
+        }
+    
+        // Adiciona eventos de clique para os botões de diminuir
+        decreaseButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                updateQuantity(index, -1);
+            });
+        });
+    
+        // Adiciona eventos de clique para os botões de aumentar
+        increaseButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                updateQuantity(index, 1);
+            });
+        });
+    
+        // Evento para o botão "Confirmar Pedido"
+        const confirmarPedidoButton = document.querySelector('.confirmar-pedido');
+        confirmarPedidoButton.addEventListener('click', () => {
+            alert('Pedido confirmado! Obrigado pela sua compra!');
+        });
+    
+        // Evento para o botão "Alterar Dados"
+        const alterarDadosButton = document.querySelector('.alterar-dados');
+        alterarDadosButton.addEventListener('click', () => {
+            alert('Você pode alterar seus dados na seção de configurações.');
+        });
+    </script>
+
+    
+    <script>
+        // Script para mostrar a opção de pagamento selecionada
+        const paymentMethodSelect = document.getElementById('payment-method');
+        const pixPayment = document.getElementById('pix-payment');
+        const dinheiroPayment = document.getElementById('dinheiro-payment');
+        const cartaoPayment = document.getElementById('cartao-payment');
+
+        paymentMethodSelect.addEventListener('change', function() {
+            const selectedPayment = this.value;
+
+            // Esconde todas as opções de pagamento
+            pixPayment.style.display = 'none';
+            dinheiroPayment.style.display = 'none';
+            cartaoPayment.style.display = 'none';
+
+            // Exibe a opção selecionada
+            if (selectedPayment === 'pix') {
+                pixPayment.style.display = 'block';
+            } else if (selectedPayment === 'dinheiro') {
+                dinheiroPayment.style.display = 'block';
+            } else if (selectedPayment === 'cartao') {
+                cartaoPayment.style.display = 'block';
+            }
+        });
+    </script>
+
+</body>
+</html>

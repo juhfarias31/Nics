@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nics Choperia</title>
+    <link rel="stylesheet" href="./CSS/confirma.css">
+</head>
+<body>
+
+<!--Logo-->
+<div class="sacola-container">
+    <header class="header">
+        <a href="index.html"><img src="./img/logo.png" width="100%" height="100%" alt="NICS Choperia" class="logo">
+
+<!--Perfil-->
+    <div class="user-icon">
+        <a href="login.html"></a><img src="./img/Perfil2.png" width="70%" height="70%">
+    </div>
+    </header>
+
+<!--Sacola-->
+    <h2 class="sacola-title">Sacola</h2>
+
+    <section class="itens-adicionados">
+    <h3>Itens Adicionados</h3>
+    <div class="item">
+        <img src="./img/costela.png" alt="Costela Defumada">
+    <div class="item-info">
+    <p>Costela defumada com lenha frutífera + Batata Frita</p>
+
+<!--Control-->
+    <div class="quantity-control">
+        <button>-</button>
+        <span>1</span>
+        <button>+</button>
+    </div>
+    </div>
+</div>
+
+
+<div class="item">
+    <img src="./img/chopp1.png" alt="Chope Session IPA">
+    <div class="item-info">
+    <p>Chope Session IPA Imperatriz 1 Litro</p>
+
+<!--Control-->
+    <div class="quantity-control">
+        <button>-</button>
+        <span>1</span>
+        <button>+</button>
+    </div>
+    </div>
+</div>
+    </section>
+
+<!-- Entrega -->
+<section class="entrega">
+    <h3>Confirme a Entrega</h3>
+    <img src="./img/horáriofuncionamento.png" width="10%" height="10%"><p>Entrega Hoje
+    Tempo: 30
+    45 min</p>
+    <img src="./img/Localização.png" width="10%" height="10%"><p>Rua Francisco Zeca da Silva, 75, Sorocaba/SP</p>
+    <img src="./img/pagamento.png" width="10%" height="10%"><p>Pagar pelo App:</p>
+</section>
+
+<button class="confirmar-pedido" onclick="window.location.href='confirma.html'">Confirmar</button>
+<button class="alterar-dados" onclick="window.location.href='sacola.html'">Voltar para sacola</button>
+
+</div>
+
+<script>
+    // Seleciona todos os botões de aumentar e diminuir a quantidade
+    const decreaseButtons = document.querySelectorAll('.quantity-control button:first-child');
+    const increaseButtons = document.querySelectorAll('.quantity-control button:last-child');
+    const quantities = document.querySelectorAll('.quantity-control span');
+
+    // Função para atualizar a quantidade
+    function updateQuantity(index, change) {
+        let currentQuantity = parseInt(quantities[index].innerText);
+        currentQuantity += change;
+
+        // Evita que a quantidade fique negativa
+        if (currentQuantity < 1) {
+            currentQuantity = 1;
+        }
+
+        quantities[index].innerText = currentQuantity;
+    }
+
+    // Adiciona eventos de clique para os botões de diminuir
+    decreaseButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            updateQuantity(index, -1);
+        });
+    });
+
+    // Adiciona eventos de clique para os botões de aumentar
+    increaseButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            updateQuantity(index, 1);
+        });
+    });
+
+    // Evento para o botão "Confirmar Pedido"
+    const confirmarPedidoButton = document.querySelector('.confirmar-pedido');
+    confirmarPedidoButton.addEventListener('click', () => {
+        alert('Pedido confirmado! Obrigado pela sua compra!');
+    });
+
+    // Evento para o botão "Alterar Dados"
+    const alterarDadosButton = document.querySelector('.alterar-dados');
+    alterarDadosButton.addEventListener('click', () => {
+        alert('Você pode alterar seus dados na seção de configurações.');
+    });
+</script>
+
+</body>
+</html>
