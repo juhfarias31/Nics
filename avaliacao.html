@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avaliação de Lugar</title>
+  <link rel="stylesheet" href="./CSS/avaliacao.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Avalie este lugar</h1>
+    <form id="AvaliacaoForm">
+      <!-- Nome do usuário -->
+      <label for="nome">Seu Nome:</label>
+      <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+      <!-- Classificação -->
+      <label for="classificacao">Classificação:</label>
+      <div class="stars">
+        <input type="radio" id="estrela5" name="classificacao" value="5" required>
+        <label for="estrela5" title="5 estrelas">★</label>
+        
+        <input type="radio" id="estrela4" name="classificacao" value="4">
+        <label for="estrela4" title="4 estrelas">★</label>
+        
+        <input type="radio" id="estrela3" name="classificacao" value="3">
+        <label for="estrela3" title="3 estrelas">★</label>
+        
+        <input type="radio" id="estrela2" name="classificacao" value="2">
+        <label for="estrela2" title="2 estrelas">★</label>
+        
+        <input type="radio" id="estrela1" name="classificacao" value="1">
+        <label for="estrela1" title="1 estrela">★</label>
+      </div>
+
+      <!-- Comentário -->
+      <label for="comentario">Comentário:</label>
+      <textarea id="comentario" name="comentario" rows="4" placeholder="Escreva seu comentário" required></textarea>
+
+      <!-- Botão de Enviar -->
+      <button type="submit">Enviar Avaliação</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
