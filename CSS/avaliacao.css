@@ -1,84 +1,91 @@
 /* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5ca40cc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
   
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f5ca40cc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
+.container {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+}
+
+.div1{
+  text-align: center;
+  color: black;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: medium;
+}
   
-  .container {
-    background: #fff;
-    padding: 20px 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 400px;
-  }
+h1 {
+  margin-bottom: 20px;
+  color: black;
+  text-align: center;
+}
   
-  h1 {
-    margin-bottom: 20px;
-    color: #333;
-    text-align: center;
-  }
+label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #555;
+}
   
-  label {
-    display: block;
-    margin: 10px 0 5px;
-    color: #555;
-  }
+input, textarea, button {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
   
-  input, textarea, button {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
+input:focus, textarea:focus {
+  border-color: #8D6D01;
+  outline: none;
+}
   
-  input:focus, textarea:focus {
-    border-color: #8D6D01;
-    outline: none;
-  }
+textarea {
+  resize: none;
+}
   
-  textarea {
-    resize: none;
-  }
+.stars {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
   
-  .stars {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    margin-bottom: 15px;
-  }
+.stars input {
+  display: none;
+}
   
-  .stars input {
-    display: none;
-  }
+.stars label {
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+}
   
-  .stars label {
-    font-size: 24px;
-    color: #ccc;
-    cursor: pointer;
-  }
+.stars input:checked ~ label,
+.stars label:hover,
+.stars label:hover ~ label {
+  color: #f90;
+}
   
-  .stars input:checked ~ label,
-  .stars label:hover,
-  .stars label:hover ~ label {
-    color: #f90;
-  }
-  
-  button {
-    background-color: #8D6D01;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
+button {
+  background-color: #8D6D01;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}

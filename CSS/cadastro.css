@@ -17,38 +17,42 @@ body {
 
 .container {
     background-color: #EBBE29;
-    padding: 20px;
+    padding: 10px; /* Reduzi ainda mais o espaçamento interno */
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 240px; /* Reduzido para 240px */
 }
 
 h1 {
     text-align: center;
+    font-size: 1.2rem; /* Diminuído o tamanho da fonte */
 }
 
 label {
-    margin-top: 10px;
+    margin-top: 6px; /* Margem menor entre os elementos */
     display: block;
+    font-size: 0.9rem; /* Fonte menor */
 }
- 
+
 input {
     width: 100%;
-    padding: 8px;
-    margin: 5px 0 15px;
+    padding: 6px; /* Reduzi o espaçamento interno do campo */
+    margin: 4px 0 10px; /* Margem ajustada */
     border: 1px solid black;
     border-radius: 4px;
+    font-size: 0.85rem; /* Tamanho da fonte menor */
 }
 
 button {
     text-align: center;
     width: 100%;
-    padding: 10px;
+    padding: 8px; /* Botão mais compacto */
     background-color: #8D6D01;
     color: black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 0.85rem; /* Fonte menor */
 }
 
 button[type="button"] {
@@ -56,17 +60,24 @@ button[type="button"] {
     color: black;
     border: none;
     text-align: center;
-    padding: 0; /* Remove padding for a cleaner look */
+    padding: 0;
+    font-size: 0.8rem; /* Fonte menor */
 }
 
 button[type="button"]:hover {
-    text-decoration: underline; /* Adiciona um efeito ao passar o mouse */
+    text-decoration: underline;
 }
 
 button:hover {
     opacity: 0.9;
 }
 
-.div1{
+.div1 {
     text-align: center;
+    margin-bottom: 10px; /* Ajustei o espaçamento entre a imagem e o formulário */
+}
+
+img {
+    width: 30%; /* Reduzi o tamanho da imagem */
+    height: auto; /* Mantém a proporção correta */
 }
