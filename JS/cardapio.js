@@ -99,3 +99,22 @@ criarEntradas(
   document.querySelector('.numL'),
   1
 );
+
+/*filtro de comida*/
+function filterItems() {
+  // Obtém o termo de busca
+  const filterValue = document.getElementById('filter-input').value.toLowerCase();
+
+  // Seleciona todos os itens do cardápio
+  const items = document.querySelectorAll('.flex-container .item1, .flex-container .item2');
+
+  // Itera sobre os itens e filtra
+  items.forEach(item => {
+      const itemText = item.innerText.toLowerCase(); // Texto do item
+      if (itemText.includes(filterValue)) {
+          item.style.display = ""; // Mostra o item
+      } else {
+          item.style.display = "none"; // Esconde o item
+      }
+  });
+}
